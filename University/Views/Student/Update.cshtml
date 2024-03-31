@@ -1,0 +1,73 @@
+﻿@model StudentViewModel
+
+@{
+    Layout = "_UniLayout";
+}
+
+
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Editing Student</span>
+        </div>
+
+        <div>
+            
+            <form method="post" asp-action="Update" class="row">
+                <input type="number" asp-for="Student.Id" hidden />
+                <div class="mb-3">
+                    <label asp-for="Student.FName" for="" class="form-label">First Name</label>
+                    <input type="text"
+                           asp-for="Student.FName"
+                           value="@Model.Student.FName"
+                           class="form-control"
+                           placeholder="" />
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Student.LName" for="" class="form-label">Last Name</label>
+                    <input type="text"
+                           asp-for="Student.LName"
+                           value="@Model.Student.LName"
+                           class="form-control"
+                           placeholder="" />
+
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Student.Email" for="" class="form-label">Email</label>
+                    <input type="text"
+                           asp-for="Student.Email"
+                           value="@Model.Student.Email"
+                           class="form-control"
+                           placeholder="" />
+
+                </div>
+               
+               
+                <div class="mb-3">
+                    <label asp-for="Student.Major" for="" class="form-label">Major</label>
+                    <input type="text"
+                           asp-for="Student.Major"
+                           value="@Model.Student.Major"
+                           class="form-control"
+                           placeholder="" />
+
+                </div>
+
+
+
+
+
+
+
+                <div class="col-lg-12 d-flex justify-content-center  ">
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

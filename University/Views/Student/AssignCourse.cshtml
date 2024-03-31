@@ -1,0 +1,54 @@
+﻿@model StudentViewModel
+
+@{
+    Layout = "_UniLayout";
+}
+
+
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">AssignCourse</span>
+        </div>
+
+        <div>
+            <form method="post" asp-action="AssignCourse" class="row">
+                <input type="number" asp-for="Student.Id" hidden />
+                <div class="mb-3">
+                    <label asp-for="Student.FName" for="" class="form-label">First Name : @Model.Student.FName</label>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Student.LName" for="" class="form-label">Last Name : @Model.Student.LName</label>
+                </div>
+
+                <div class="mb-3 col-lg-6">
+                    <label asp-for="Student.Courses" for="" class="form-label">select course</label>
+                    <select class="form-select "
+                            asp-for="Student.Courses">
+                        <option selected >select one</option>
+
+                        @{
+                            foreach (var s in Model.Courses)
+                            {
+                                <option value=@s.Id>@s.Name</option>
+                            }
+                            
+                        }
+
+                    </select>
+                </div>
+               
+                    
+                
+
+                <div class="col-lg-12 d-flex justify-content-center  ">
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

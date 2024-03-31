@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Course>
+@{
+    Layout = "_UniLayout";
+}
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">All Courses</span>
+        </div>
+    </div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td class="table-light">Id</td>
+                    <td class="table-light">Name</td>
+                    <td class="table-light">Prof Name</td>
+                    <td class="table-light">Operation</td>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Professor.Name</td>
+                        <td>
+
+
+                            <a class="btn btn-success" asp-action="Update" asp-route-id="@item.Id" role="button">
+                                <span class="material-symbols-outlined">
+                                    Edit
+                                </span>
+                            </a>
+                            <a class="btn btn-danger " asp-action="Delete" asp-route-id="@item.Id" role="button">
+                                <span class="material-symbols-outlined">
+                                    Delete
+                                </span>
+                            </a>
+                        </td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+</div>
